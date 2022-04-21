@@ -9,7 +9,8 @@ import Tabs from 'components/Tabs';
 
 const drawerWidth = 240;
 
-export default function SideDrawer() {
+export default function SideDrawer(props) {
+    console.log(props.loggedIn);
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -30,7 +31,7 @@ export default function SideDrawer() {
             >
                 <Toolbar />
                 <Box sx={{ overflow: 'auto' }}>
-                    <Tabs />
+                    <Tabs loggedIn={props.loggedIn} />
                 </Box>
             </Drawer>
         </Box>

@@ -31,6 +31,7 @@ const Login = (props) => {
                 color: 'green',
                 message: 'Logged in.'
             });
+            window.location = '/';
         }
         catch(e) {
             setMessage({
@@ -45,7 +46,7 @@ const Login = (props) => {
             <Box sx={{ width: '30%', display: 'flex', flexDirection: 'column', margin: 'auto' }}>
                 <h1>Login</h1>
                 <TextField onChange={onChange} name='username' />
-                <TextField onChange={onChange} name='password' />
+                <TextField onChange={onChange} name='password' type='password' />
                 <Box sx={{ color: message.color }}>{message.message}</Box>
                 <Button variant='contained' onClick={onSubmit}>Submit</Button>
             </Box>

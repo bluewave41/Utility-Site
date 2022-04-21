@@ -22,6 +22,7 @@
     "dotenv": "^16.0.0",
     "knex": "^1.0.7",
     "next": "12.1.5",
+    "next-session": "^4.0.4",
     "node-mocks-http": "^1.11.0",
     "objection": "^3.0.1",
     "pg": "^8.7.3",
