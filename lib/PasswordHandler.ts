@@ -7,7 +7,7 @@ const PasswordHandler = {
         return hashed;
     },
     comparePassword: async(password: string, hash: string) => {
-        const value = await bcrypt.comparePassword(password, hash);
+        const value = await bcrypt.compare(password, hash);
         //TODO: handle error
         return value;
     }

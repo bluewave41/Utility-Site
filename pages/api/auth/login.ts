@@ -3,7 +3,7 @@ import PasswordHandler from 'lib/PasswordHandler';
 import UserRepository from 'repositories/UserRepository';
 
 export default async function handler(req, res) {
-    const [username, password] = req.body;
+    const { username, password } = req.body;
 
     try {
         checkParameters(req, ['username', 'password']);
