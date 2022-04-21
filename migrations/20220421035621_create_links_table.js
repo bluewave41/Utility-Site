@@ -5,8 +5,8 @@
 exports.up = function(knex) {
     return knex.schema.createTable('links', function(table) {
         table.increments('linkId').notNullable();
-        table.string('from', 2048).notNullable();
-        table.string('to', 20).notNullable();
+        table.string('from', 20).notNullable();
+        table.string('to', 2048).notNullable();
     })
 };
 

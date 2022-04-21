@@ -17,7 +17,7 @@ const Tabs = (props) => {
 
     const loggedInTabs = [
         { text: 'Home', url: '/', icon: <HomeIcon /> },
-        { text: 'Create Link', url: '/link/create', icon: <CreateIcon /> },
+        { text: 'Create Link', url: '/links/create', icon: <CreateIcon /> },
         { text: 'Logout', url: '/api/auth/logout', icon: <LogoutIcon /> }
     ]
 
