@@ -8,14 +8,16 @@ import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import SideDrawer from 'components/SideDrawer';
 import { useState } from 'react';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
+const drawerWidth = 240;
 
 export default function MyApp(props) {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
     const [username, setUsername] = useState(props.pageProps.props.username);
-    console.log(props.pageProps)
     return (
         <CacheProvider value={emotionCache}>
             <Head>
@@ -24,8 +26,11 @@ export default function MyApp(props) {
             <ThemeProvider theme={theme}>
                 {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                 <CssBaseline />
-                <SideDrawer loggedIn={username ? true : false} />
-                <Component {...pageProps} />
+                <SideDrawer loggedIn={username ? true : false} drawerWidth={drawerWidth} />
+                <Toolbar />
+                <Box sx={{ ml: drawerWidth + 20 + 'px' }}>
+                    <Component {...pageProps} />
+                </Box>
             </ThemeProvider>
         </CacheProvider>
     );

@@ -7,10 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Tabs from 'components/Tabs';
 
-const drawerWidth = 240;
-
 export default function SideDrawer(props) {
-    console.log(props.loggedIn);
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -24,9 +21,9 @@ export default function SideDrawer(props) {
             <Drawer
                 variant="permanent"
                 sx={{
-                    width: drawerWidth,
+                    width: props.drawerWidth,
                     flexShrink: 0,
-                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                    [`& .MuiDrawer-paper`]: { width: props.drawerWidth, boxSizing: 'border-box' },
                 }}
             >
                 <Toolbar />
